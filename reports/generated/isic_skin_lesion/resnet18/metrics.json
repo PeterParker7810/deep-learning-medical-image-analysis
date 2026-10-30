@@ -1,0 +1,59 @@
+{
+  "task": "isic_skin_lesion",
+  "architecture": "resnet18",
+  "dataset_records": 1275,
+  "split_counts": {
+    "train": 738,
+    "validation": 158,
+    "test": 379
+  },
+  "class_counts": {
+    "benign": 1028,
+    "malignant": 247
+  },
+  "missing_files": 0,
+  "seed": 42,
+  "checkpoint": "models\\saved_models\\isic_skin_lesion\\resnet18\\model.pt",
+  "best_validation_loss": 0.6302144312405888,
+  "epochs_completed": 8,
+  "metrics": {
+    "task_type": "multiclass",
+    "accuracy": 0.7810026385224275,
+    "precision_macro": 0.6816783216783218,
+    "recall_macro": 0.7278947368421053,
+    "f1_macro": 0.6964811223357552,
+    "roc_auc_macro_ovr": 0.8075877192982456,
+    "per_class": {
+      "benign": {
+        "precision": 0.9018181818181819,
+        "recall_sensitivity": 0.8157894736842105,
+        "specificity": 0.64,
+        "f1": 0.8566493955094991,
+        "roc_auc_ovr": 0.8075877192982456,
+        "support": 304
+      },
+      "malignant": {
+        "precision": 0.46153846153846156,
+        "recall_sensitivity": 0.64,
+        "specificity": 0.8157894736842105,
+        "f1": 0.5363128491620112,
+        "roc_auc_ovr": 0.8075877192982456,
+        "support": 75
+      }
+    },
+    "confusion_matrix": [
+      [
+        248,
+        56
+      ],
+      [
+        27,
+        48
+      ]
+    ],
+    "class_order": [
+      "benign",
+      "malignant"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+.pytest_cache
+.torch_cache
+.tmp_*
+.env
+.streamlit/secrets.toml
+report.docx
+Final_Project_Report.docx
+data/raw
+data/processed
+reports/generated/isic_skin_lesion/resnet18/split_manifest.json
