@@ -14,7 +14,7 @@ Open `http://localhost:8501`. The Streamlit health endpoint is `/_stcore/health`
 ## Hosting considerations
 
 - **Streamlit Community Cloud:** convenient for the app, but private repository access, resource limits, and model artifact hosting depend on the owner's account. Large clinical datasets and model checkpoints should not be uploaded to the app repository.
-- **Hugging Face Spaces:** supports Streamlit/Docker deployment and model storage, but gated datasets/checkpoints require the owner's account and configured secrets. No credentials or model files are committed here.
+- **Hugging Face Spaces:** supports Streamlit/Docker deployment and model storage, but gated datasets/checkpoints require the owner's account and configured secrets. No credentials or raw datasets are committed; the trained ISIC checkpoint is tracked with this app so its real inference path is available.
 - Use an authenticated private artifact store for any trained weights; configure its access through the host's secrets manager. Never add access tokens to source or Docker layers.
 
 Before public deployment, obtain and train on all approved data (or explicitly scope deployment to the available task), set a clear research-only disclaimer, confirm dataset and model licensing, test health and real inference endpoints, and record the verified URL. No public URL is currently claimed.

@@ -25,10 +25,10 @@ The project title in the user-provided master instructions is **Deep Learning Ba
 | R-13 | Upload an image and show prediction probability | Streamlit task selector, image validation and preview, checkpoint-backed inference, class probabilities, and clear unavailable-model errors | `app.py`; real ISIC ResNet-18 output verified on official test image |
 | R-14 | Show contributing region where applicable | Optional Grad-CAM heatmap for supported classifier backbones | `src/explainability.py`; disclose it is not a validated lesion mask |
 | R-15 | System assists trained health professionals and is not a replacement | Put research-only and non-diagnostic language in app and documentation | UI and `README.md` |
-| R-16 | Use public, anonymized data and protect privacy | Do not bundle private medical images, credentials, or identifying metadata; ignore raw datasets/checkpoints by default | `.gitignore`, data access documentation |
+| R-16 | Use public, anonymized data and protect privacy | Exclude raw datasets, credentials and identifying metadata; explicitly track only the trained ISIC checkpoint needed by the working app; ignore other checkpoints by default | `.gitignore`, data access documentation |
 | R-17 | Provide reproducible training and evaluation | Seed Python/NumPy/PyTorch; save config, label map, split manifest, checkpoint, and metric JSON | `src/reproducibility.py`, `src/training.py` |
 | R-18 | Test data, preprocessing, models, evaluation, and app behavior | Unit and pipeline tests for available code; integration test with generated non-medical fixtures only for mechanics, clearly not experimental evidence | `tests/` |
-| R-19 | Prepare Phase III reports and demo | Create reports from actual dataset/model/test/app evidence; mark remaining external deliverables pending | `Phase_III_Project_Submission/`; six updated PDFs, actual dashboard/analysis captures, recording script; MOV pending |
+| R-19 | Prepare Phase III reports and demo | Create reports from actual dataset/model/test/app evidence; mark remaining external deliverables pending | `Phase_III_Project_Submission/`; six updated PDFs, genuine dashboard/analysis/results/Grad-CAM captures, recording script; MOV pending |
 
 ## Explicit implementation decisions
 
