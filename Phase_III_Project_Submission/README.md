@@ -15,6 +15,6 @@
 
 ## Scope and remaining inputs
 
-The Phase-I report names NIH ChestX-ray14, APTOS diabetic-retinopathy data, and ISIC. Only the official CC0 ISIC 2016 Task 3 release was available for this run. NIH download needs more workspace storage; APTOS download needs the user's Kaggle sign-in and acceptance of the competition rules. The delivered application includes the real trained ISIC checkpoint and does not claim clinical validation. Public deployment is pending.
+The Phase-I report names NIH ChestX-ray14, APTOS diabetic-retinopathy data, and ISIC. Only the official CC0 ISIC 2016 Task 3 release was available for this run. NIH download needs more workspace storage; APTOS files are absent, and the user currently cannot access Kaggle to accept the competition rules. The delivered application includes the real trained ISIC checkpoint and does not claim clinical validation. Public deployment is pending.
 
-The final repository tests passed (13 passed). Read each report for the exact split, metrics and limitations; no other task results are claimed.
+The latest repository test run passed (13 passed using a workspace-local pytest temporary directory); compilation and dependency checks passed. The ISIC test metrics were recomputed from the saved checkpoint and preserved test split and matched the recorded metrics exactly. Read each report for the exact split, metrics and limitations; no other task results are claimed.

@@ -43,18 +43,18 @@ The project title in the user-provided master instructions is **Deep Learning Ba
 - [x] ISIC layouts, labels, image counts, dimensions, duplicates, and CC0 metadata verified from official files.
 - [x] ISIC adapter loads actual data; NIH/APTOS adapters need source data validation.
 - [x] Official ISIC test split preserved; no patient/lesion IDs exist in Task 3 labels.
-- [x] ISIC ResNet-18 training and validation completed for 8 epochs; NIH/APTOS training is pending data access.
+- [x] ISIC ResNet-18 training and validation completed for 8 epochs; saved held-out metrics were independently recomputed from the checkpoint and preserved test split (exact match).
 - [x] Checkpoint reload and real ISIC image inference verified.
 - [x] Held-out metrics, split counts and config metadata saved from actual run.
 - [x] Streamlit launches; genuine prediction and Grad-CAM behavior verified; missing data/checkpoint paths handled.
-- [x] Automated tests executed: 13 passed; `compileall` and `pip check` passed.
+- [x] Automated tests re-executed in the workspace: 13 passed; `compileall` and `pip check` passed. Default pytest temp placement is restricted in this environment; `--basetemp=.pytest-tmp` succeeds.
 - [x] Phase III PDFs contain actual ISIC results; genuine dashboard/analysis screenshots saved; MOV remains pending.
 - [x] Public deployment is pending because no deployment account/credentials are available.
 
 ## Blocking inputs for experimental completion
 
-- NIH ChestX-ray14 full dataset download awaits adequate storage.
-- APTOS 2019 data download awaits user sign-in and competition-rules acceptance.
+- NIH ChestX-ray14 source data are not present; current free disk space is approximately 49.8 GB, which is insufficient for the full archive plus extraction and the existing workspace contents.
+- APTOS 2019 files are not present. The user currently cannot access Kaggle to accept the competition rules and download them; training remains blocked until `train.csv` and the labeled image directory are supplied.
 - No expected model comparison set, split policy, training schedule, or target metric is prescribed in the Phase-I report.
 - No deployment account, URL, or recording output location is provided.
 

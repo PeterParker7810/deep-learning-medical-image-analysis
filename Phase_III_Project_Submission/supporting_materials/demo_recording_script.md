@@ -1,6 +1,6 @@
 # Working Prototype Demo Recording Script
 
-**Status:** No video recording has been produced yet. The local app, ISIC 2016 data audit, ResNet-18 checkpoint, held-out metrics, image inference, and Grad-CAM are available for a real capture. NIH/APTOS data and public deployment remain pending.
+**Status:** No video recording has been produced yet. The local app, ISIC 2016 data audit, ResNet-18 checkpoint, held-out metrics, image inference, and Grad-CAM are available for a real capture. NIH data are unavailable due to storage; APTOS files are unavailable and the user cannot access Kaggle at this time. Public deployment remains pending.
 
 ## Before recording
 

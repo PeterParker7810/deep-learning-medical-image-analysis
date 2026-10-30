@@ -14,7 +14,7 @@ This repository implements a research prototype based on the supplied Phase-I pr
 
 ## Current implementation status
 
-The supplied report is Phase I and contains objectives, literature review, scope, feasibility, and references. It does not choose a final backbone, prescribe split ratios/hyperparameters, set performance targets, or report experiments. The official ISIC 2016 Task 3 CC0 release has been obtained and audited; exact duplicate training copies were removed to avoid split leakage. A ResNet-18 transfer-learning experiment completed 8 epochs with a validation-selected checkpoint and evaluation on the untouched official test split. NIH ChestX-ray14 remains unavailable because the full release exceeds available workspace storage alongside current files. APTOS 2019 requires Kaggle sign-in and competition-rule acceptance; download is pending.
+The supplied report is Phase I and contains objectives, literature review, scope, feasibility, and references. It does not choose a final backbone, prescribe split ratios/hyperparameters, set performance targets, or report experiments. The official ISIC 2016 Task 3 CC0 release has been obtained and audited; exact duplicate training copies were removed to avoid split leakage. A ResNet-18 transfer-learning experiment completed 8 epochs with a validation-selected checkpoint and evaluation on the untouched official test split. Its stored metrics were independently recomputed from the checkpoint and recorded split with an exact match. NIH ChestX-ray14 remains unavailable because the full release exceeds available workspace storage alongside current files. APTOS 2019 files are absent, and the user currently cannot access Kaggle to accept the competition rules and download them.
 
 Read [`IMPLEMENTATION_CHECKLIST.md`](IMPLEMENTATION_CHECKLIST.md) for the requirement mapping and unresolved dataset inputs.
 
@@ -118,7 +118,7 @@ The application offers overview, image analysis, dataset status, model results, 
 python -m pytest
 ```
 
-The tests include mechanics-only fixtures made from generated images for loading, preprocessing, output shape, checkpoint reload, metric calculations, grouped splits, and one-epoch training. They are not medical examples or performance evidence. The ISIC integration and 8-epoch experiment were also run against the actual selected dataset. NIH/APTOS data integration remains pending source access.
+The tests include mechanics-only fixtures made from generated images for loading, preprocessing, output shape, checkpoint reload, metric calculations, grouped splits, and one-epoch training. They are not medical examples or performance evidence. The latest run passed 13 tests (`pytest -q --basetemp=.pytest-tmp`); compilation and dependency checks passed. The ISIC integration and 8-epoch experiment were also run against the actual selected dataset. NIH/APTOS data integration remains pending source access.
 
 ## Evaluation and interpretation
 
@@ -126,7 +126,7 @@ For multiclass tasks, the pipeline reports accuracy, macro precision/recall/F1, 
 
 ## Limitations and future work
 
-- NIH ChestX-ray14 and APTOS 2019 are not installed. The approved report gives no exact releases; APTOS is gated on Kaggle rule acceptance. Full NIH download is currently blocked by local storage capacity.
+- NIH ChestX-ray14 and APTOS 2019 are not installed. The approved report gives no exact releases. APTOS is gated on Kaggle rule acceptance, which the user currently cannot complete. Full NIH download is blocked by local storage capacity (about 49.8 GB free at the latest check).
 - ISIC uses official 2016 Task 3 binary benign/malignant labels. The label files provide no patient identifiers, so patient-level separation cannot be verified; the official test split is preserved and byte-identical training copies are removed.
 - ISIC 2016 ResNet-18 results are documented in `Phase_III_Project_Submission/Performance Results.pdf`; selected non-identifying audit, metrics, history and plots are versioned under `reports/generated/isic_skin_lesion/` so the app can display measured results after cloning. Other generated artifacts remain ignored. The trained checkpoint is included for reproducible inference; original medical images are not committed. NIH/APTOS runs, public deployment, and actual MOV recording remain pending.
 - Grad-CAM is not a localization ground truth and does not establish causal explanation.
