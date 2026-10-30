@@ -62,13 +62,15 @@ src/
 tests/                         Unit and mechanics-only integration tests
 data/raw/                      Local datasets (ignored by Git)
 models/saved_models/           ISIC ResNet-18 checkpoint tracked; other checkpoints ignored
-reports/generated/             Local audits and experiment outputs (ignored by Git)
+reports/generated/             Selected ISIC evidence tracked; other outputs ignored by Git
 Phase_III_Project_Submission/  Academic reports and demonstration materials
 ```
 
 ## Requirements and setup
 
 Use Python 3.10 or 3.11. PyTorch/torchvision should be installed as a compatible pair for your operating system and accelerator. The `requirements.txt` lists the project packages; install the matching PyTorch build first if the default resolver does not support your GPU.
+
+The Phase III PDFs can be regenerated from the saved ISIC experiment artifacts with `python generate_phase3.py`. Install the optional PDF generator dependency with `python -m pip install -r requirements-docs.txt` first.
 
 ```bash
 python -m venv .venv
